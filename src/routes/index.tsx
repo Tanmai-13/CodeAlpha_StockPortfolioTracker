@@ -449,7 +449,7 @@ function Index() {
                   <BarChart3 className="size-7" />
                 </div>
                 <p className="text-base font-medium">No holdings yet</p>
-                <p max-w-sm className="max-w-sm text-sm text-muted-foreground">
+                <p className="max-w-sm text-sm text-muted-foreground">
                   Add your first sample stock investment using the form above to see your
                   portfolio come to life.
                 </p>
