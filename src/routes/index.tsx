@@ -151,7 +151,7 @@ function Index() {
     return { investment, qty, count: holdings.length };
   }, [holdings]);
 
-  const selectedPrice = symbol ? STOCK_PRICES[symbol] : 0;
+  const selectedPrice = symbol ? (STOCK_PRICES[symbol] ?? 0) : 0;
   const qtyNum = Number(quantity);
   const previewTotal =
     symbol && Number.isInteger(qtyNum) && qtyNum > 0 ? selectedPrice * qtyNum : 0;
@@ -178,7 +178,7 @@ function Index() {
       {
         id: crypto.randomUUID(),
         symbol,
-        price: STOCK_PRICES[symbol],
+        price: (STOCK_PRICES[symbol] ?? 0),
         quantity: Number(quantity),
       },
     ]);
@@ -372,7 +372,7 @@ function Index() {
                   <SelectContent>
                     {SYMBOLS.map((s) => (
                       <SelectItem key={s} value={s}>
-                        {s} — {inr(STOCK_PRICES[s])}
+                        {s} — {inr(STOCK_PRICES[s] ?? 0)}
                       </SelectItem>
                     ))}
                   </SelectContent>
